@@ -39,6 +39,7 @@ jobs:
       - name: Retrive c p l
         run: echo "Client Send Status ':' ${{github.event.client_Payload.status}}"
              echo "Client Send Statoos ':' ${{github.event.client_Payload.statoos}}"
+             echo "Client Send event_name ':' ${{github.event_name}}"
 
 
   second-job:
