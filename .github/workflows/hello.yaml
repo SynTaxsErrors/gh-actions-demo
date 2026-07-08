@@ -29,7 +29,7 @@ jobs:
        echo "THE EIEI is ${{secrets.EIEI}}"
 
   hello-job:
-    if: ${{github.event_name != 'after_rendered_cms'}}
+    if: ${{github.event.client_Payload.statoos != 'comploote'}}
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +43,7 @@ jobs:
 
 
   second-job:
-    if: ${{github.event_name != 'after_rendered_cms'}}
+    if: ${{github.event.client_Payload.statoos != 'comploote'}}
     runs-on: windows-latest
     needs: hello-job
 
