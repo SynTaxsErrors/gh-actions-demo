@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths-ignore:
       - ".github/workflows/*"
+  pull_request:
+     branches: [main]
+  workflow_dispatch:
 jobs:
   hello-job:
     runs-on: ubuntu-latest
