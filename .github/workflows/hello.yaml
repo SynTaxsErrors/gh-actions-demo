@@ -8,8 +8,7 @@ on:
   pull_request:
      branches: [main]
   repository_dispatch:
-    types:
-      - after_rendered_cms
+    types: ["after_rendered_cms"]
 jobs:
   hello-job:
     runs-on: ubuntu-latest
