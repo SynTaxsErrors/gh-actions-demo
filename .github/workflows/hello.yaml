@@ -1,8 +1,11 @@
 name: helloworld
+
 on: push
+
 jobs:
   hello-job:
-  runs-on: ubuntu-lastest
-  steps:
-    - name: run a one line script
-      run: echo "Hello Github Actions."
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run a one line script
+        run: echo "Hello GitHub Actions."
