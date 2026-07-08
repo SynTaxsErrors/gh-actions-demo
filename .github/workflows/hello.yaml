@@ -1,8 +1,10 @@
-name: helloworld
+name: helloWorld
 
 on:
   push:
-   branches: [main]
+    branches:
+      - main
+
 jobs:
   hello-job:
     runs-on: ubuntu-latest
@@ -10,7 +12,9 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo "Hello GitHub Actions."
- Seccond-job: 
-     runs-on: windows-latest
-     steps:
-      - rub: echo "This job runnig on ${{runner.os}}"
+
+  second-job:
+    runs-on: windows-latest
+
+    steps:
+      - run: echo "This job running on ${{ runner.os }}"
