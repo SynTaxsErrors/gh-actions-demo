@@ -19,11 +19,13 @@ jobs:
     - name: Echo Github Variable
       env:
        APP_VERSION: "1.0.0"
+       RUNNER_CONTEXT: ${{toJson(runner)}}
       run: 
        echo "trigger by ${{github.event_name}}"
        echo "repo by ${{github.repository}}"
        echo "ref-name by ${{github.ref_name}}"
        echo "APP ':' ${{env.APP_NAME}} ':' version ':' ${{env.APP_VERSION}}"
+       echo "$RUNNER_CONTEXT"
 
   hello-job:
     runs-on: ubuntu-latest
