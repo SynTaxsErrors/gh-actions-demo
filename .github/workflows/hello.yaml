@@ -15,6 +15,7 @@ jobs:
 
   second-job:
     runs-on: windows-latest
+    needs: hello-job
 
     steps:
       - run: echo "This job running on ${{ runner.os }}"
