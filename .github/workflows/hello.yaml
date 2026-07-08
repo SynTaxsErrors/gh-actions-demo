@@ -26,6 +26,7 @@ jobs:
        echo "ref-name by ${{github.ref_name}}"
        echo "APP ':' ${{env.APP_NAME}} ':' version ':' ${{env.APP_VERSION}}"
        echo "$RUNNER_CONTEXT"
+       echo "THE EIEI is ${{secrets.EIEI}}"
 
   hello-job:
     runs-on: ubuntu-latest
