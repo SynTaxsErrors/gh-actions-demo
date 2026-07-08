@@ -9,7 +9,17 @@ on:
      branches: [main]
   repository_dispatch:
     types: ["after_rendered_cms"]
+
 jobs:
+  echo-vars:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Echo Github Variable
+      run: 
+       echo "trigger by ${{github.event_name}}"
+       echo "repo by ${{github.repository}}"
+       echo "ref-name by ${{github.ref_name}}"
+
   hello-job:
     runs-on: ubuntu-latest
 
