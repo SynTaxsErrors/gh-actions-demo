@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo "Hello GitHub Actions."
+        
+      - name: Retrive c p l
+        run: echo "Client Send Status ':' ${{github.event.client_Payload.status}}"
 
   second-job:
     runs-on: windows-latest
