@@ -38,4 +38,6 @@ jobs:
     steps:
       - name: UI Test
         if: ${{ inputs.run_tests }}
-        run: echo "Run UI TEST tool in ${{ inputs.environment }}"
+        run: 
+         echo "Run Build status is ${{ needs.build.outputs.build_status}}"
+         echo "Run UI TEST tool in ${{ inputs.environment }}"
