@@ -1,5 +1,18 @@
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target Envioronment'
+        required: true
+        type: choice
+        options:
+          - "stg"
+          - "prod"
+      run_tests:
+        description: 'run ui test'
+        required: true
+        type: boolean
+        default: false
 
 jobs:
   build:
@@ -13,3 +26,9 @@ jobs:
           ref: ${{ github.ref_name }}
       - name: list file in ws
         run: ls ${{github.workspace}}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: UI Test
+        if: ${{ inputs.run_tests }}
+        run: echo "Run UI TEST tool in ${{ inputs.environment }}"
