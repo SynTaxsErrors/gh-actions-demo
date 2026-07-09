@@ -33,6 +33,7 @@ jobs:
           echo "GET EIEI"
           echo "Status-EIEI" >> $GITHUB_OUTPUT
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: UI Test
